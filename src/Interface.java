@@ -9,13 +9,17 @@ public class Interface {
             System.exit(1);
         }
 
+        if (!args[0].endsWith(".store")) {
+            System.out.println("Must end with .store");
+            System.exit(1);
+        }
+
        String filename = args[0];
-       Store s = new Store(filename);
+      //TODO
+      // StoreManager sm = new StoreManager(filename);
 
        Scanner stdin = new Scanner(System.in);
        boolean complete = false;
-       //TODO
-       // System.out.println(s.getStores()); (for store names)
 
        while (!complete) {
            System.out.println("For help type, \"help\"");
