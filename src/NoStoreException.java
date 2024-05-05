@@ -1,0 +1,1 @@
+class NoStoreException extends Exception {}
