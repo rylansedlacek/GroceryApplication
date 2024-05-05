@@ -19,7 +19,7 @@ class Item {
 
         String pr = s.nextLine();
         this.price = Double.parseDouble(pr);
-        s.nextLine(); // read plus
+        s.nextLine();
     }
 
     public String getName() {

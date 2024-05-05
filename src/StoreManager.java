@@ -25,16 +25,48 @@ class StoreManager {
             this.stores.add(store);
           }
        } catch (NoStoreException e) {
-           System.out.println("caught");
        } 
     }
 
-    public String getStores() {
+    public String getStoreNames() {
         String retVal = "";
         for (int i=0; i < stores.size(); i++) {
             retVal += stores.get(i).getName() + "\n" + stores.get(i).getLocation() + "\n";
         }
         return retVal;
     }
-            
+
+    public String getAStoreAll(String name) {
+        String retVal = "";
+        String theStore = "";
+        Store tmp = null;
+        for (int i=0; i < stores.size(); i++) {
+            if (stores.get(i).getName().equals(name)) {
+                theStore = stores.get(i).getName();
+                tmp = stores.get(i);
+            } else {
+                return "no store named " + name + ".";
+            }
+        }
+        
+        retVal += theStore + "\n" + "-----------" + "\n";
+        retVal += "items:" + "\n";
+        ArrayList<Item> storeItems = tmp.getItems();
+
+        for (int i=0; i<storeItems.size(); i++) {
+            retVal += storeItems.get(i).getName() + "\n";
+
+            double p = storeItems.get(i).getPrice();
+            String priceString = Double.toString(p);
+            retVal += "price: $" + priceString + "\n";
+
+            int s = storeItems.get(i).getStock();
+            String stockString = Integer.toString(s);
+            retVal += "stock: " + stockString + "\n";
+            retVal += "\n";
+
+        }
+
+        return retVal;
+    }
 }
