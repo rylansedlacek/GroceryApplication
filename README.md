@@ -1,26 +1,3 @@
-Interface
-- Number Interface
+<h2>Notes:</h2>
 
-Store
-- Name
-- Location
-
-Item
-- Name
-- Price
-- Stock
-
-abstract Action
-- execute()
-
-ActionFactory
-- Create actions
-* Add to cart
-* Remove from Cart
-* Compare
-* Checkout
-
-User
-(Singlelton)
-- Cart
-- CurrentStore
+go through and fix hydration
