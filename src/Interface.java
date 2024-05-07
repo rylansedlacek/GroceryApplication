@@ -32,8 +32,8 @@ public class Interface {
         String input = stdin.nextLine();
 
         if (input.equals("1")) {
-            //System.out.println(sm.getStoreNames());
-            // System.out.println(sm.getAStoreAll("Test1"));
+           // System.out.println(sm.getStoreNames());
+             System.out.println(sm.getAStoreAll("Test2"));
 
         } else if (input.equals("2")) {
             complete = true;

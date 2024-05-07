@@ -21,6 +21,7 @@ class StoreManager {
 
        try {
           while (true) {
+
             Store store = new Store(s);
             this.stores.add(store);
           }
@@ -40,14 +41,19 @@ class StoreManager {
         String retVal = "";
         String theStore = "";
         Store tmp = null;
+        boolean hey = true;
         for (int i=0; i < stores.size(); i++) {
             if (stores.get(i).getName().equals(name)) {
                 theStore = stores.get(i).getName();
                 tmp = stores.get(i);
-            } else {
-                return "no store named " + name + ".";
-            }
+                 hey = false;
+            } 
         }
+        
+        if (hey) {
+            return "No store found.";
+        }
+
         
         retVal += theStore + "\n" + "-----------" + "\n";
         retVal += "items:" + "\n";

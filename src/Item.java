@@ -9,15 +9,18 @@ class Item {
     public Item(Scanner s) throws NoItemException {
         
         String test = s.nextLine();
+        //System.out.println(test);
         if (test.equals("===")) {
             throw new NoItemException();
         }
         this.name = test;
 
         String st = s.nextLine();
+        //System.out.println(st);
         this.stock = Integer.parseInt(st);
 
         String pr = s.nextLine();
+        //System.out.println(pr);
         this.price = Double.parseDouble(pr);
         s.nextLine();
     }

@@ -23,19 +23,24 @@ class Store {
         }
 
         this.name = s.nextLine();
+      //  System.out.println(name);
         this.location = s.nextLine();
+       // System.out.println(location);
         int size = Integer.parseInt(s.nextLine());
+       // System.out.println(size);
         this.invenSize = size;
 
         s.nextLine(); // throw away ---
         int count = 0;
         try {
+            //System.out.println(invenSize);
             while(count < invenSize) {
                 Item i = new Item(s);
                 this.justItems.add(i);
                 this.ItemStock.put(i, i.getStock());
                 this.ItemPrice.put(i, i.getPrice());
                 count++;
+               // s.nextLine();
             }
         } catch (NoItemException e) {
         }
