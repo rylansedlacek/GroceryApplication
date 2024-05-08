@@ -26,10 +26,16 @@ class StoreManager {
             this.stores.add(store);
           }
        } catch (NoStoreException e) {
-       } 
+       }
+      Background.instance().create(this); 
     }
 
-    public String getStoreNames() {
+
+    public ArrayList getStores() {
+        return this.stores;
+    }
+
+    public String getAllStoreNames() {
         String retVal = "";
         for (int i=0; i < stores.size(); i++) {
             retVal += stores.get(i).getName() + "\n" + stores.get(i).getLocation() + "\n";
@@ -37,7 +43,7 @@ class StoreManager {
         return retVal;
     }
 
-    public String getAStoreAll(String name) {
+    public String getEntireStore(String name) {
         String retVal = "";
         String theStore = "";
         Store tmp = null;

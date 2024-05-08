@@ -25,6 +25,12 @@ class Item {
         s.nextLine();
     }
 
+    public Item getItemNamed(String t) {
+        if (t.equals(this.name)) {
+            return this;
+        }
+    }
+
     public String getName() {
         return this.name;
     }
