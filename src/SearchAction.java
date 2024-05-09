@@ -8,22 +8,23 @@ class SearchAction extends Action {
     }
 
     String execute() {
-     ArrayList steve = Background.instance().getManager().getStores();
+     StoreManager theManager = Background.instance().getManager();
+     ArrayList<Store> theStores = theManager.getStores();
+     String ret = "";
 
-     if (steve == null) {
-         System.out.println("Im sad");
-     }
-     String ret = " ";
-
-    for (int i=0; i <steve.size(); i++) {
-        
-        Item a = steve.get(i).getjustItems().getItemNamed(itemName);
-
-        if (a!= null) {
-            ret += "worked";
-        }
+    for (int i=0; i <theStores.size(); i++) {
+       ArrayList<Item> temp = theStores.get(i).getItems();
+       for (int j=0; j<temp.size(); j++) {
+          if (temp.get(j).getName().equals(this.itemName)) {
+             ret += 
+                 "\n" +"Locations:" + "\n" + theStores.get(i).getName() + "\n" +
+                     temp.get(j).getName() + "\n" + temp.get(j).getPrice() + "\n" +
+                         temp.get(j).getStock() + "\n";
+          }
+       }
+       temp = new ArrayList<Item>();
     }
-    return ret;
+         return ret;
 
      }    
 

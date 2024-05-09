@@ -28,6 +28,9 @@ class Item {
     public Item getItemNamed(String t) {
         if (t.equals(this.name)) {
             return this;
+        } else {
+            Item a = null;
+            return a;
         }
     }
 
@@ -38,6 +41,14 @@ class Item {
     public int getStock() {
         return this.stock;
     }
+
+    public void removeStock(int amount) {
+        this.stock -= amount;
+    }
+
+    public void restock(int amount) {
+       this.stock += amount;
+    } 
 
     public double getPrice() {
         return this.price;

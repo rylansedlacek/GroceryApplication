@@ -15,18 +15,26 @@ class ActionFactory {
     }
 
     Action doAction(String action) {
-
+        Action a = null;
        if (action.startsWith("SEARCH")) {
           String tmp = action.substring("SEARCH".length());
-          Action a = new SearchAction(tmp);
+          a = new SearchAction(tmp);
+          return a;
+       } else if (action.startsWith("COMPARE")) {
+          String r = action.substring("COMPARE".length());
+          String Items[] = r.split(" ");
+
+          if (Items.length != 2) {
+              Action nope = new BogusAction();
+              return nope;
+          }
+
+          a = new CompareAction(Items[0], Items[1]);
           return a;
        } else {
-          return;
+          Action bogus = new BogusAction();
+          return bogus;
        } 
-
-
-
-
     }
 
 
