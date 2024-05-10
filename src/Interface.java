@@ -45,10 +45,9 @@ public class Interface {
 
         } else if (input.equals("2")) {
             System.out.println();
-            System.out.println("Enter |item1| |item2|");
-            System.out.print("> ");
-            String items = stdin.nextLine();
-            theAction = ActionFactory.instance().doAction("COMPARE" + items);
+            System.out.print("Enter item name > ");
+            String item = stdin.nextLine();
+            theAction = ActionFactory.instance().doAction("COMPARE" + item);
             System.out.println(theAction.execute());
         } else if (input.equals("6")) {
            complete = true;

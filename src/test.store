@@ -3,7 +3,7 @@
 +++
 Test1
 testLocation
-2
+3
 ---
 beer
 20
@@ -12,6 +12,10 @@ beer
 yo
 2
 1.99
++
+yo
+1
+0.2
 ===
 +++
 Test2

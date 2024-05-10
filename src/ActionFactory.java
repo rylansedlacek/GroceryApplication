@@ -22,14 +22,7 @@ class ActionFactory {
           return a;
        } else if (action.startsWith("COMPARE")) {
           String r = action.substring("COMPARE".length());
-          String Items[] = r.split(" ");
-
-          if (Items.length != 2) {
-              Action nope = new BogusAction();
-              return nope;
-          }
-
-          a = new CompareAction(Items[0], Items[1]);
+          a = new CompareAction(r);
           return a;
        } else {
           Action bogus = new BogusAction();
