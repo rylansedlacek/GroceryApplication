@@ -61,7 +61,7 @@ class StoreManager {
         }
 
         
-        retVal += theStore + "\n" + "-----------" + "\n";
+        retVal +=  "\n" + theStore + "\n" + "-----------" + "\n";
         retVal += "items:" + "\n";
         ArrayList<Item> storeItems = tmp.getItems();
 

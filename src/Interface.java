@@ -27,32 +27,55 @@ public class Interface {
 
        while(!complete) {
         System.out.println("Grocery Application:");
-        System.out.println("1 - search");
-        System.out.println("2 - compare");
-        System.out.println("3 - view store");
-        System.out.println("4 - add to cart");
-        System.out.println("5 - view cart");
-        System.out.println("6 - exit");
-        System.out.print("type a number: ");
+        System.out.println("1 - search item");
+        System.out.println("2 - compare stores");
+        System.out.println("3 - view store inventory");
+        System.out.println("4 - find lowest price");
+        /*
+        System.out.println("5 - add to cart");
+        System.out.println("6 - view cart");
+        */
+        System.out.println("0 - exit");
+        System.out.print("enter number > ");
         String input = stdin.nextLine();
 
         if (input.equals("1")) {
            System.out.println();
-           System.out.print("Enter item name > ");
+           System.out.println("Enter item name");
+           System.out.print("> ");
            String name = stdin.nextLine();
            theAction = ActionFactory.instance().doAction("SEARCH" + name);
            System.out.println(theAction.execute());
 
         } else if (input.equals("2")) {
             System.out.println();
-            System.out.print("Enter item name > ");
+            System.out.println("Enter: |Store1| |Store2|");
+            System.out.print("> ");
+            /*
             String item = stdin.nextLine();
             theAction = ActionFactory.instance().doAction("COMPARE" + item);
             System.out.println(theAction.execute());
-        } else if (input.equals("6")) {
+            */
+        } else if (input.equals("3")) {
+            System.out.println();
+            System.out.println("Enter store name:");
+            System.out.print("> ");
+            String store = stdin.nextLine();
+            theAction = ActionFactory.instance().doAction("INVEN" + store);
+            System.out.println(theAction.execute());
+        } else if (input.equals("4")) {
+            System.out.println();
+            System.out.println("Enter item name:");
+            System.out.print("> ");
+            String item = stdin.nextLine();
+            theAction = ActionFactory.instance().doAction("FINDLOW" + item);
+            System.out.println(theAction.execute());
+        }else if (input.equals("0")) {
            complete = true;
         } else {
+            System.out.println();
             System.out.println("Invalid input, try again.");
+            System.out.println();
         }
        } // end loop
 
