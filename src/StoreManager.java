@@ -30,6 +30,16 @@ class StoreManager {
       Background.instance().create(this); 
     }
 
+    public Store getStoreNamed(String n) {
+        Store theStore = null;
+        for (int i=0; i<stores.size(); i++) {
+            if (stores.get(i).getName().equals(n)) {
+                theStore = stores.get(i);
+            } 
+        }
+        return theStore;
+    }
+
 
     public ArrayList getStores() {
         return this.stores;
