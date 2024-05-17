@@ -51,11 +51,9 @@ public class Interface {
             System.out.println();
             System.out.println("Enter: |Store1| |Store2|");
             System.out.print("> ");
-            /*
-            String item = stdin.nextLine();
-            theAction = ActionFactory.instance().doAction("COMPARE" + item);
+            String stores = stdin.nextLine();
+            theAction = ActionFactory.instance().doAction("COMPARE" + stores);
             System.out.println(theAction.execute());
-            */
         } else if (input.equals("3")) {
             System.out.println();
             System.out.println("Enter store name:");

@@ -40,8 +40,14 @@ class CompareAction extends Action {
      }
 
      if (storeOneTotal > storeTwoTotal) { 
-        System.out.println(); //finish tm
-     } // else if blah blah
+        retVal += "\n" + "MORE EXPENSIVE:" + "\n" + "Store: " + store1 + "\n" + "Total: $" + storeOneTotal + "\n" +
+            "LESS EXPENSIVE:" + "\n" + "Store: " + store2 + "\n" + "Total: $" + storeTwoTotal + "\n";
+     } else if (storeTwoTotal > storeOneTotal) {
+        retVal += "\n" + "MORE EXPENSIVE:" + "\n" + "Store: " + store2 + "\n" + "Total: $" + storeTwoTotal + "\n" +
+            "LESS EXPENSIVE:" + "\n" + "Store: " + store1 + "\n" + "Total: $" + storeOneTotal + "\n";
+     } else {
+         retVal += "Even Cost Found.";
+     }
 
 
 
