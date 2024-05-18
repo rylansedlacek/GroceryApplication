@@ -36,7 +36,7 @@ class CompareAction extends Action {
      }
 
      for (int i=0; i<storeTwoItems.size(); ++i) {
-         storeTwoTotal += storeOneItems.get(i).getPrice();
+         storeTwoTotal += storeTwoItems.get(i).getPrice();
      }
 
      if (storeOneTotal > storeTwoTotal) { 
