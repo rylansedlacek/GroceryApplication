@@ -5,14 +5,14 @@ class Background {
     private StoreManager theManager;
     private static Background theInstance;
     private Hashtable<Store,Item> userCart;
-    private ArrayList<Item> itemCart;
+    private Hashtable<Item,Integer> itemQuantCart;
     private Store currentStore;
 
     public Background() {
         this.theInstance = theInstance;
         this.theManager = theManager;
         this.userCart = new Hashtable<Store,Item>();
-        this.itemCart = new ArrayList<Item>();
+        this.itemQuantCart = new Hashtable<Item,Integer>();
         this.currentStore = null;
     }
 
@@ -31,20 +31,24 @@ class Background {
         return this.theManager;
     }
 
-    public void addToCart(Store currStore, Item item) {
+    public void addToStoreCart(Store currStore, Item item) { //refrence this for getting store for item in cart
         this.userCart.put(currStore,item);
     }
 
-    public void addToItem(Item item) {
-        this.itemCart.add(item);
+    public void addToItemQuant(Item item, int quant) { //refrence this to get quanity
+        this.itemQuantCart.put(item,quant);
     }
 
     public Hashtable getFullCart() {
         return this.userCart;
     }
 
-    public ArrayList getItemCart() {
-        return this.itemCart;
+    public Hashtable getItemQuantCart() {
+        return this.itemQuantCart;
+    }
+
+    public Store getCurrentStore() {
+        return this.currentStore;
     }
 
     public void setCurrentStore(Store s) {

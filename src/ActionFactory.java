@@ -41,7 +41,18 @@ class ActionFactory {
           String theStore = action.substring("STORE".length());
           a = new SetStoreAction(theStore);
           return a; 
-       }  else {
+       } else if (action.startsWith("ADD")) {
+         String unsplit2 = action.substring("ADD".length());  
+         String[] splitter = unsplit2.split(" ");
+            if (splitter.length <= 1) {
+                a = new BogusAction();
+                return a;
+            }
+        String purItem = splitter[0];    
+        int purQuant = Integer.parseInt(splitter[1]);
+        a = new AddCartAction(purItem,purQuant);
+        return a;
+       } else {
           Action bogus = new BogusAction();
           return bogus;
        } 

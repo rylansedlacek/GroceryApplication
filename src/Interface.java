@@ -33,11 +33,9 @@ public class Interface {
         System.out.println("1 - search item");
         System.out.println("2 - compare stores");
         System.out.println("3 - view store inventory");
-        System.out.println("4 - find lowest price");
-        /*
+        System.out.println("4 - find lowest price"); 
         System.out.println("5 - add to cart");
-        System.out.println("6 - view cart");
-        */
+       // System.out.println("6 - view cart");
         System.out.println("0 - exit");
         System.out.print("enter number > ");
         String input = stdin.nextLine();
@@ -79,6 +77,13 @@ public class Interface {
             System.out.print("> ");
             String store = stdin.nextLine();
             theAction = ActionFactory.instance().doAction("STORE" + store);
+            System.out.println(theAction.execute());
+        } else if (input.equals("5")) {
+            System.out.println();
+            System.out.println("Enter: |ITEM| |QUANTITY|");
+            System.out.print("> ");
+            String purchase = stdin.nextLine();
+            theAction = ActionFactory.instance().doAction("ADD" + purchase);
             System.out.println(theAction.execute());
         } else {
             System.out.println();
