@@ -35,7 +35,8 @@ public class Interface {
         System.out.println("3 - view store inventory");
         System.out.println("4 - find lowest price"); 
         System.out.println("5 - add to cart");
-       // System.out.println("6 - view cart");
+       // System.out.println("6 - view store cart");
+       // System.out.println("7 - view full cart");
         System.out.println("0 - exit");
         System.out.print("enter number > ");
         String input = stdin.nextLine();
