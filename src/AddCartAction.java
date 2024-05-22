@@ -6,7 +6,8 @@ class AddCartAction extends Action {
     private Store currentStore;
     private Item theItem;
 
-    public class AddCartAction(Store curr, Item item) {
+    public AddCartAction(Store curr, Item item) {
+
         this.currentStore = curr;
         this.theItem = item;
 

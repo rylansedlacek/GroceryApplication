@@ -6,12 +6,14 @@ class Background {
     private static Background theInstance;
     private Hashtable<Store,Item> userCart;
     private ArrayList<Item> itemCart;
+    private Store currentStore;
 
     public Background() {
         this.theInstance = theInstance;
         this.theManager = theManager;
         this.userCart = new Hashtable<Store,Item>();
         this.itemCart = new ArrayList<Item>();
+        this.currentStore = null;
     }
 
     public static synchronized Background instance() {
@@ -45,4 +47,17 @@ class Background {
         return this.itemCart;
     }
 
-}
+    public void setCurrentStore(Store s) {
+        this.currentStore = s;
+    }
+
+    public String getCurrentStoreName() {
+        if (this.currentStore == null) {
+            return "NONE";
+        } else {
+            return this.currentStore.getName();
+        }
+    }
+
+} //end file
+

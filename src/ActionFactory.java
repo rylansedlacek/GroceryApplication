@@ -37,12 +37,13 @@ class ActionFactory {
           String storeName = action.substring("INVEN".length());
           a = new InventoryAction(storeName);
           return a;
-       } else {
+       } else if (action.startsWith("STORE")) {
+          String theStore = action.substring("STORE".length());
+          a = new SetStoreAction(theStore);
+          return a; 
+       }  else {
           Action bogus = new BogusAction();
           return bogus;
        } 
     }
-
-
-
 }

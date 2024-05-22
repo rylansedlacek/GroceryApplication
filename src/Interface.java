@@ -26,7 +26,10 @@ public class Interface {
        Action theAction = null;
 
        while(!complete) {
-        System.out.println("Grocery Application:");
+        System.out.println("|Grocery Application|");
+        System.out.println("|Current Store: " + Background.instance().getCurrentStoreName() + "|");
+        System.out.println();
+        System.out.println("# - set store");
         System.out.println("1 - search item");
         System.out.println("2 - compare stores");
         System.out.println("3 - view store inventory");
@@ -70,6 +73,13 @@ public class Interface {
             System.out.println(theAction.execute());
         }else if (input.equals("0")) {
            complete = true;
+        } else if (input.equals("#")) { //TODO move this to top for read.
+            System.out.println();
+            System.out.println("Enter name of Store (Or NONE):");
+            System.out.print("> ");
+            String store = stdin.nextLine();
+            theAction = ActionFactory.instance().doAction("STORE" + store);
+            System.out.println(theAction.execute());
         } else {
             System.out.println();
             System.out.println("Invalid input, try again.");
