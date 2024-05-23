@@ -24,6 +24,7 @@ public class Interface {
        Scanner stdin = new Scanner(System.in);
        boolean complete = false;
        Action theAction = null;
+       
 
        while(!complete) {
         System.out.println("|Grocery Application|");
@@ -40,6 +41,8 @@ public class Interface {
         System.out.println("0 - exit");
         System.out.print("enter number > ");
         String input = stdin.nextLine();
+    
+     
 
         if (input.equals("1")) {
            System.out.println();
@@ -51,16 +54,31 @@ public class Interface {
 
         } else if (input.equals("2")) {
             System.out.println();
+            String stores = "";
+            if (!Background.instance().storeCheck()) {
             System.out.println("Enter: |Store1| |Store2|");
             System.out.print("> ");
-            String stores = stdin.nextLine();
+            stores = stdin.nextLine();
+            } else {
+            System.out.println("Current Store: " + Background.instance().getCurrentStoreName());
+            System.out.println("Enter: |Store2Compare|");
+            System.out.print("> ");
+            stores = stdin.nextLine();
+            stores += " ";
+            stores += Background.instance().getCurrentStoreName();
+            }
             theAction = ActionFactory.instance().doAction("COMPARE" + stores);
             System.out.println(theAction.execute());
         } else if (input.equals("3")) {
             System.out.println();
+            String store = "";
+            if (!Background.instance().storeCheck()) {
             System.out.println("Enter store name:");
             System.out.print("> ");
-            String store = stdin.nextLine();
+            store = stdin.nextLine();
+            } else {
+                store = Background.instance().getCurrentStoreName();
+            }
             theAction = ActionFactory.instance().doAction("INVEN" + store);
             System.out.println(theAction.execute());
         } else if (input.equals("4")) {

@@ -7,6 +7,7 @@ class Background {
     private Hashtable<Store,Item> userCart;
     private Hashtable<Item,Integer> itemQuantCart;
     private Store currentStore;
+    private boolean storeCheck;
 
     public Background() {
         this.theInstance = theInstance;
@@ -14,6 +15,7 @@ class Background {
         this.userCart = new Hashtable<Store,Item>();
         this.itemQuantCart = new Hashtable<Item,Integer>();
         this.currentStore = null;
+        this.storeCheck = false;
     }
 
     public static synchronized Background instance() {
@@ -60,6 +62,14 @@ class Background {
             return "NONE";
         } else {
             return this.currentStore.getName();
+        }
+    }
+
+    public boolean storeCheck() {
+        if (this.currentStore == null) {
+            return false;
+        } else {
+            return true;
         }
     }
 

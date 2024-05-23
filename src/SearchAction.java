@@ -17,7 +17,7 @@ class SearchAction extends Action {
        for (int j=0; j<temp.size(); j++) {
           if (temp.get(j).getName().equals(this.itemName)) {
              ret += 
-                 "\n" +"Locations:" + "\n" + theStores.get(i).getName() + "\n" +
+                 "\n" +"Location: " + theStores.get(i).getName() + "\n" +
                      temp.get(j).getName() + "\n" + temp.get(j).getPrice() + "\n" +
                          temp.get(j).getStock() + "\n";
           }
