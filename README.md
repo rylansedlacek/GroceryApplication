@@ -24,3 +24,5 @@
 - Console based, but still extremely easy to understand user interface
 - Use of <b>Hydration</b> from a text file for endless combinations of, stores, items, and more!
 
+-----------------------------------------------------
+<h2>Version 1.0 Summer 2024</h2>
