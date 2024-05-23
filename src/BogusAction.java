@@ -4,6 +4,6 @@ class BogusAction extends Action {
     }
 
     String execute() {
-        return "Invalid Action, please try again.";
+        return "\n" +  "Invalid Action, please try again." + "\n";
     }
 }
