@@ -15,32 +15,27 @@ class StoreCartAction extends Action {
         }
 
         retVal += "\n" + "CART FOR STORE: " + Background.instance().getCurrentStoreName() + "\n";
+        retVal += "--------------------------" + "\n";
 
         Hashtable<Store,Item> userCart = Background.instance().getFullCart();
         Hashtable<Item,Integer> userQuant = Background.instance().getItemQuantCart();
 
-
-        //TODO Total rewrite of this mess on friday please 5/24
         Item theItem = null;
         int theQuant = 0;
-        for (int i=0; i<userCart.size(); i++) {
-            theItem = userCart.get(theStore);
-            if (theItem == null) {
-                retVal += "";
-            } else {
-                for (int j=0; j<userQuant.size(); j++) {
-                    theQuant = userQuant.get(theItem);
-                    if (theQuant == 0) {
-                       retVal += "";
-                    } else {
-                       retVal += "\n" + theItem.getName() + "\n" + theQuant + "\n";
-                       theQuant = 0;
-                    }
-                } 
-            }
+
+        if (userCart == null || userCart.isEmpty()) {
+            retVal += "|YOU HAVE AN EMPTY CART|" + "\n";
+            return retVal;
         }
 
-        return retVal;
+        ArrayList<Item> allItems = Background.instance().getMainCart(theStore);
+
+        for (int i=0; i<allItems.size(); ++i) {
+            retVal += "\n" + "NAME: " +  allItems.get(i).getName() + "\n";
+            retVal += "QUANTITY: " + userQuant.get(allItems.get(i)) + "\n";
+        }
+
+         return retVal;
     }
 
 

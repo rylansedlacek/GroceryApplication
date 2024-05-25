@@ -6,6 +6,7 @@ class Background {
     private static Background theInstance;
     private Hashtable<Store,Item> userCart;
     private Hashtable<Item,Integer> itemQuantCart;
+    private Hashtable<Store,ArrayList<Item>> fullCart;
     private Store currentStore;
     private boolean storeCheck;
 
@@ -14,6 +15,7 @@ class Background {
         this.theManager = theManager;
         this.userCart = new Hashtable<Store,Item>();
         this.itemQuantCart = new Hashtable<Item,Integer>();
+        this.fullCart = new Hashtable<Store,ArrayList<Item>>();
         this.currentStore = null;
         this.storeCheck = false;
     }
@@ -35,10 +37,27 @@ class Background {
 
     public void addToStoreCart(Store currStore, Item item) { //refrence this for getting store for item in cart
         this.userCart.put(currStore,item);
+        System.out.println("added item");
     }
 
     public void addToItemQuant(Item item, int quant) { //refrence this to get quanity
         this.itemQuantCart.put(item,quant);
+    }
+
+    public void addToFullCart(Store current, Item item) {
+        ArrayList<Item> test = this.fullCart.get(current);
+
+        if (test == null || test.isEmpty()) {
+            ArrayList<Item> nueve = new ArrayList<Item>();
+            nueve.add(item);
+            this.fullCart.put(current, nueve);
+        } else {
+            test.add(item);
+        }
+    }
+
+    public ArrayList getMainCart(Store s) {
+        return this.fullCart.get(s);
     }
 
     public Hashtable getFullCart() {
