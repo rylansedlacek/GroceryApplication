@@ -49,7 +49,7 @@ class AddCartAction extends Action {
             theItem.removeStock(purchaseQuant);
         }
 
-        Background.instance().addToStoreCart(current,theItem); //TODO FUNC nEEDS TO BE REMOVED
+       // Background.instance().addToStoreCart(current,theItem); //TODO FUNC nEEDS TO BE REMOVED
         Background.instance().addToFullCart(current, theItem);
         Background.instance().addToItemQuant(theItem,purchaseQuant);
 

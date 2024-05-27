@@ -37,7 +37,7 @@ public class Interface {
         System.out.println("4 - find lowest price"); 
         System.out.println("5 - add to cart");
         System.out.println("6 - view store cart");
-       // System.out.println("7 - view full cart");
+        System.out.println("7 - view full cart");
         System.out.println("0 - exit");
         System.out.print("enter number > ");
         String input = stdin.nextLine();
@@ -108,6 +108,11 @@ public class Interface {
             System.out.println();
             String storeCart = "STORECART";
             theAction = ActionFactory.instance().doAction("STORECART");
+            System.out.println(theAction.execute());
+        } else if (input.equals("7")) {
+            System.out.println();
+            String fullCart = "FULLCART";
+            theAction = ActionFactory.instance().doAction(fullCart);
             System.out.println(theAction.execute());
         } else {
             System.out.println();

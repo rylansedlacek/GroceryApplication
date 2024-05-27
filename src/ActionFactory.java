@@ -55,6 +55,9 @@ class ActionFactory {
         int purQuant = Integer.parseInt(splitter[1]);
         a = new AddCartAction(purItem,purQuant);
         return a;
+       } else if (action.equals("FULLCART")) {
+            a = new FullCartAction();
+            return a;
        } else {
           Action bogus = new BogusAction();
           return bogus;

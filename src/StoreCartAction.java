@@ -17,13 +17,14 @@ class StoreCartAction extends Action {
         retVal += "\n" + "CART FOR STORE: " + Background.instance().getCurrentStoreName() + "\n";
         retVal += "--------------------------" + "\n";
 
-        Hashtable<Store,Item> userCart = Background.instance().getFullCart();
+      //  Hashtable<Store,Item> userCart = Background.instance().getFullCart();
         Hashtable<Item,Integer> userQuant = Background.instance().getItemQuantCart();
+        Hashtable<Store, ArrayList<Item>> allCart = Background.instance().getTestCart();
 
         Item theItem = null;
         int theQuant = 0;
 
-        if (userCart == null || userCart.isEmpty()) {
+        if (allCart == null || allCart.isEmpty()) {
             retVal += "|YOU HAVE AN EMPTY CART|" + "\n";
             return retVal;
         }

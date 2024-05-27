@@ -7,6 +7,7 @@ class Background {
     private Hashtable<Store,Item> userCart;
     private Hashtable<Item,Integer> itemQuantCart;
     private Hashtable<Store,ArrayList<Item>> fullCart;
+    private ArrayList<Store> visitedStores;
     private Store currentStore;
     private boolean storeCheck;
 
@@ -16,6 +17,7 @@ class Background {
         this.userCart = new Hashtable<Store,Item>();
         this.itemQuantCart = new Hashtable<Item,Integer>();
         this.fullCart = new Hashtable<Store,ArrayList<Item>>();
+        this.visitedStores = new ArrayList<Store>();
         this.currentStore = null;
         this.storeCheck = false;
     }
@@ -29,6 +31,14 @@ class Background {
 
     public void create(StoreManager m) {
         this.theManager = m;
+    }
+
+    public void visitStore(Store store) {
+        this.visitedStores.add(store);
+    }
+
+    public ArrayList getVisitedStores() {
+        return this.visitedStores;
     }
 
     public StoreManager getManager() {
@@ -58,6 +68,10 @@ class Background {
 
     public ArrayList getMainCart(Store s) {
         return this.fullCart.get(s);
+    }
+
+    public Hashtable getTestCart() {
+        return this.fullCart;
     }
 
     public Hashtable getFullCart() {

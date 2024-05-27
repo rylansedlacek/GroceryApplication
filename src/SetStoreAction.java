@@ -27,6 +27,7 @@ String execute() {
     }
 
     Background.instance().setCurrentStore(setTo);
+    Background.instance().visitStore(setTo);
     retVal += "\n" +  "Set Current Store To: " + storeName + "." + "\n";
 
     return retVal;
