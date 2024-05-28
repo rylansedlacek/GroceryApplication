@@ -18,8 +18,8 @@ class SearchAction extends Action {
           if (temp.get(j).getName().equals(this.itemName)) {
              ret += 
                  "\n" +"Location: " + theStores.get(i).getName() + "\n" +
-                     temp.get(j).getName() + "\n" + temp.get(j).getPrice() + "\n" +
-                         temp.get(j).getStock() + "\n";
+                    "NAME: " +  temp.get(j).getName() + "\n" + "PRICE: $" + temp.get(j).getPrice() + 
+                    "\n" + "QUANTITY: " + temp.get(j).getStock() + "\n";
           }
        }
        temp = new ArrayList<Item>();

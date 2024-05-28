@@ -11,7 +11,7 @@ class InventoryAction extends Action {
     String execute() {
        StoreManager theManager = Background.instance().getManager();
        String retVal = theManager.getEntireStore(storeName);
-       return retVal;
+       return "\n" + retVal + "\n";
     }
 
 }

@@ -40,10 +40,10 @@ class CompareAction extends Action {
      }
 
      if (storeOneTotal > storeTwoTotal) { 
-        retVal += "\n" + "MORE EXPENSIVE:" + "\n" + "Store: " + store1 + "\n" + "Total: $" + storeOneTotal + "\n" +
+        retVal += "\n" + "MORE EXPENSIVE:" + "\n" + "Store: " + store1 + "\n" + "Total: $" + storeOneTotal + "\n" + "\n" +
             "LESS EXPENSIVE:" + "\n" + "Store: " + store2 + "\n" + "Total: $" + storeTwoTotal + "\n";
      } else if (storeTwoTotal > storeOneTotal) {
-        retVal += "\n" + "MORE EXPENSIVE:" + "\n" + "Store: " + store2 + "\n" + "Total: $" + storeTwoTotal + "\n" +
+        retVal += "\n" + "MORE EXPENSIVE:" + "\n" + "Store: " + store2 + "\n" + "Total: $" + storeTwoTotal + "\n" + "\n" +
             "LESS EXPENSIVE:" + "\n" + "Store: " + store1 + "\n" + "Total: $" + storeOneTotal + "\n";
      } else {
          retVal += "Even Cost Found.";

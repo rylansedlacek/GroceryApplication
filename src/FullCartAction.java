@@ -11,12 +11,16 @@ class FullCartAction extends Action {
         Hashtable<Item, Integer> quant = Background.instance().getItemQuantCart();
 
         if (visitedStores == null || visitedStores.isEmpty()) {
-            return "|EMPTY CART|" + "\n";
+            return "|YOU HAVE AN EMPTY CART|" + "\n";
         }
 
        for (int i=0; i<visitedStores.size(); i++) {
           Store tmp = visitedStores.get(i);
           ArrayList<Item> tmpItems = Background.instance().getMainCart(tmp);
+
+          if (tmpItems == null || tmpItems.isEmpty()) {
+              return "|YOU HAVE AN EMPTY CART|" + "\n";
+          }
             
           retVal += "\n" + tmp.getName() + "\n";
           retVal += "-----------------------" + "\n";

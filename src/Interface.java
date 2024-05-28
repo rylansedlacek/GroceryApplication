@@ -88,7 +88,7 @@ public class Interface {
             String item = stdin.nextLine();
             theAction = ActionFactory.instance().doAction("FINDLOW" + item);
             System.out.println(theAction.execute());
-        }else if (input.equals("0")) {
+        }else if (input.equals("0") || input.equals("clear")) { // TODO remove after dev
            complete = true;
         } else if (input.equals("#")) { //TODO move this to top for read.
             System.out.println();

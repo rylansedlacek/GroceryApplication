@@ -11,7 +11,7 @@ class StoreCartAction extends Action {
         Store theStore = theManager.getStoreNamed(Background.instance().getCurrentStoreName());
 
         if (theStore == null) {
-            return "Invalid Operation: No Store Selected";
+            return "Invalid Operation: No Store Selected" + "\n";
         }
 
         retVal += "\n" + "CART FOR STORE: " + Background.instance().getCurrentStoreName() + "\n";

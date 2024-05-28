@@ -51,7 +51,13 @@ class ActionFactory {
                 a = new BogusAction();
                 return a;
             }
-        String purItem = splitter[0];    
+        String purItem = splitter[0];
+    /*
+        if (splitter[1] instanceof String) {
+            a = new BogusAction();
+            return a;
+        }
+    */    
         int purQuant = Integer.parseInt(splitter[1]);
         a = new AddCartAction(purItem,purQuant);
         return a;

@@ -35,7 +35,11 @@ class FindLowestAction extends Action {
        temp = new ArrayList<Item>();
     }
 
-    retVal += "\n" + "LOWEST $ FOR: " + item  + "\n" + "-----------" + "\n" +
+    if (theStore == null || l == null) {
+        return "\n" + "NO ITEM NAMED " + item + " FOUND!" + "\n";
+    }
+
+    retVal += "\n" + "LOWEST $ FOR: " + item  + "\n" + "------------------------" + "\n" +
         "LOCATION: " + theStore.getName() + "\n" + "PRICE: $" + l.getPrice() + "\n"; 
     return retVal; 
     }
