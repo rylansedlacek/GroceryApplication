@@ -17,9 +17,11 @@ class FullCartAction extends Action {
        for (int i=0; i<visitedStores.size(); i++) {
           Store tmp = visitedStores.get(i);
           ArrayList<Item> tmpItems = Background.instance().getMainCart(tmp);
-
+          
+          
           if (tmpItems == null || tmpItems.isEmpty()) {
-              return "|YOU HAVE AN EMPTY CART|" + "\n";
+              break;
+            //  return "|YOU HAVE AN EMPTY CART|" + "\n";
           }
             
           retVal += "\n" + tmp.getName() + "\n";
