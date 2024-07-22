@@ -16,7 +16,7 @@
    
        java Interface ../files/test.store
 
-6. Follow the prompts to "mess around" with the program.
+6. Follow the prompts to use the program.
 
 <h2>Features:</h2>
 
