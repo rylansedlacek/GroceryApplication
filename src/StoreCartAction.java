@@ -31,6 +31,10 @@ class StoreCartAction extends Action {
 
         ArrayList<Item> allItems = Background.instance().getMainCart(theStore);
 
+        if (allItems == null) {
+            return "|YOU HAVE AN EMPTY CART|" + "\n";
+        }
+
         for (int i=0; i<allItems.size(); ++i) {
             retVal += "\n" + "NAME: " +  allItems.get(i).getName() + "\n";
             retVal += "QUANTITY: " + userQuant.get(allItems.get(i)) + "\n";

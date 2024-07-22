@@ -1,1 +1,1 @@
-N/A
+1. Fix bug with viewing Full cart after switching store
